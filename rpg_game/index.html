@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/title.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com"> 
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap" rel="stylesheet">
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+  <title>Crypt</title>
+</head>
+<body>
+  <div class="title-wrapper" id="title-wrapper">
+    <div class="content">
+      <h1>Crypt</h1>
+      <div>
+        <input type="button" id="start" value="スタート"><br>
+        <input type="button" id="continue" value="コンティニュー" style="display: none;">
+      </div>
+      <div id="pic">
+        <img src="http://localhost/rpg_game/image/title/woman.png">
+      </div>
+    </div>
+  </div>
+  <div id="game-wrapper" class="game-wrapper" style="display: none;">
+    <div id="select">
+      <p id="select-message"></p>
+      <div id="character-area">
+        <div class="characters">
+          <img src="http://localhost/rpg_game/image/characters/charanter1.png"><br>
+          <input type="button" id="selected0" value="選択する">
+        </div class="characters">
+        <div class="characters">
+          <img src="./image/characters/charanter2.png"><br>
+          <input type="button" id="selected1" value="選択する">
+        </div><br>
+        <div class="characters">
+          <img src="./image/characters/charanter3.png"><br>
+          <input type="button" id="selected2" value="選択する">
+        </div>  
+        <div class="characters">
+          <img src="./image/characters/charanter4.png"><br>
+          <input type="button" id="selected3" value="選択する">
+        </div>
+      </div>
+    </div>
+    <div class="character-name" id="charactername" style="display: none;">
+      <p id="name-message"></p>
+      <img><br>
+      <input type="text" id="named">
+      <div>
+        <input type="button" id="predesideusername" value="決定">
+        <input type="button" id="desideusername" value="決定" style="display: none;">
+        <input type="button" id="cancelusername" value="キャンセル" style="display: none;">
+      </div>
+    </div>
+    <div id="game-filed" style="display: none;">
+      <div id="game-play">
+        <div id="play-field">
+          <div id="enemy">
+            <img id="enemy-img" style="display: none;"><br>
+            <p id="enemy-hp" style="display: none;"></p>
+          </div>
+          <div id="player">
+            <div id="direction-command">
+              <div id="all-btn">
+                <div id="top">
+                  <input type="button" id="top-btn" value="&#xf062;" class="fas fa-arrow-up">
+                </div>
+                <div id="leftandright">
+                  <input type="button" id="left-btn" value="&#xf060;" class="fas fa-arrow-left">
+                  <input type="button" id="right-btn" value="&#xf061;" class="fas fa-arrow-right">
+                </div>
+                <div id="bottom">
+                  <input type="button" id="bottom-btn" value="&#xf063;" class="fas fa-arrow-down">
+                </div>
+              </div>
+              </div>
+            <div id="character">
+              <img id="character-img"><br>
+              <span id="character-hp"></span>
+            </div>
+          </div>
+          <div id="player-command">
+            <div id="btn-area">
+              <input type="button" id="fighting" value="たたかう" disabled><br>
+              <input type="button" id="escape" value="にげる" disabled><br>
+              <input type="button" id="recovery" value="かいふく" disabled>
+            </div>
+            <div id="message">
+              <p id="display-message"></p>
+            </div>
+          </div>
+        </div>
+        <div id="play-inform">
+          <div id="play-log">
+            <span>LV:</span><span id="level">1</span>
+            <p>【現在地】</p>
+            <span>歩数Y:</span><span id="y-walk">0</span>
+            <span>歩数X:</span><span id="x-walk">0</span>
+            <br>
+            <br>
+            <span>倒した敵の数:</span><span id="win-count">0</span><br>
+            <span>敵出現平均歩数:</span><span id="encount-average">0</span><br>
+            <p id="log-title">【敵出現ログ】</p>
+            <div id="enemy-log-wrapper">
+              <div id="enemy-log">
+              </div>
+              <input type="button" value="データ保存" id="save-btn">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    let encountper; 
+    let winper;
+    let escapeper;
+    let characternum;
+    let username;
+    let userHp = 60;
+    let enemyHp;
+    let yWalk = 0;
+    let xWalk = 0;
+    let winCount = 0;
+    let level = 1;
+    let walkCount = 0;
+  </script>
+  <script src="http://localhost/rpg_game/js/rpg_game.js" type="module"></script>
+  <script src="http://localhost/rpg_game/js/func.js" type="module"></script>
+  <script src="http://localhost/rpg_game/js/class.js" type="module"></script>
+</body>
+</html>
